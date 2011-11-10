@@ -21,7 +21,6 @@ which git > /dev/null || (echo "git must be installed and on the PATH" && exit 1
 
 # get some local information about this system
 cd $(dirname $0)
-pythonversion="python$(python --version 2>&1 | egrep -o '2.[4-9]')"
 basedir=$(pwd)
 
 # save the username for the update script
@@ -54,7 +53,7 @@ fi
 
 # export things
 myenv=""
-myvars="username home id pythonversion basedir dist update pkgman"
+myvars="username home id basedir dist update pkgman"
 export $myvars
 
 for v in $myvars; do
