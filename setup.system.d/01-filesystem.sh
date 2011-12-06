@@ -1,3 +1,3 @@
 #!/bin/sh
 cd $basedir/filesystem
-rsync -ca --exclude "home/username" * /
+rsync -ctpr --exclude "home/username" * /

@@ -1,3 +1,4 @@
 #!/bin/sh
 cd $basedir/filesystem/home/username
-rsync -ca * $home/
+# this doesn't catch hidden items, which probably isn't a problem yet
+rsync -ctpr * $home/
