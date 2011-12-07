@@ -68,7 +68,7 @@ function run_setup() {
     script="$basedir/setup.$1.d/$script"
     if [[ -x "$script" ]]; then
       if [[ "$1" == "user" ]]; then
-        sudo -u HOME=$home $username $myenv $script
+        sudo -u $username HOME=$home $myenv $script
       elif [[ "$1" == "system" ]]; then
         $script
       fi
@@ -77,8 +77,8 @@ function run_setup() {
 }
 
 # ...run them
-run_setup user
 run_setup system
+run_setup user
 
 # automatic updates (every 4 hours)
 echo "0   */4   *   *   *   root   $basedir/update.sh" #> /etc/cron.d/adrtools
