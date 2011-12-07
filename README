@@ -1,0 +1,41 @@
+ADR Tools
+============
+
+(c) 2011 - Andrew D. Regner <andrew@aregner.com>
+
+WHAT IS THIS
+------------
+
+    This is mostly intended as a collection of scripts, configurations, 
+    utilities, libraries, etc. that I have developed or gathered over time.  
+    There is not necessarly any unifying purpose or connection between any two 
+    of them other then they make my life easier.  Some things contained herein 
+    are however dependent or related to other things.  To know what's what, 
+    you will just have to either ask me or figure it out yourself.
+
+    The "adrtools" framework around it is something I developed to make 
+    distributing and updating all of this easier, no matter what UNIX-like 
+    system I am on.  The intention is that I can log into a system for the 
+    first time, pull down this repository, and run init.sh to make that system 
+    a home.  That's all there (should be) to it.  Updates are from then on 
+    applied automatically as the repo itself is updated.  In the near-future, 
+    there will be the ability to specify what "types" of things should be 
+    brought down and installed into the target system.  For example, 
+    configurations and utilities related to playing media files should not be 
+    installed in a server-type environment.  Or, if I am just a guest on 
+    someone else's system, only the things relating to my personal environment 
+    should be installed, and not root-level changes, as I wouldn't have root on 
+    that system.  The framework already has the ability to update private data 
+    (not contained in the public repository) for the purpose of syncing GPG and 
+    SSH keys installed in my home directory.
+
+    I make this all public simply for the purpose of maybe possiably someday 
+    helping someone that is interested in one or more of the little tools or 
+    configurations I use.  It is first and foremost, for my personal use.
+
+
+LICENSE
+-------
+
+    Unless otherwise noted, everything in here is made avaliable under the
+    terms of the GNU GPL v2 (http://www.gnu.org/licenses/gpl-2.0.html).
