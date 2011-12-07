@@ -58,7 +58,7 @@ export $myvars
 
 for v in $myvars; do
   pair="$v=$(eval echo \$$v)"
-  echo $pair
+  #echo $pair
   myenv="$myenv $pair"
 done
 
@@ -68,7 +68,7 @@ function run_setup() {
     script="$basedir/setup.$1.d/$script"
     if [[ -x "$script" ]]; then
       if [[ "$1" == "user" ]]; then
-        sudo -u $username $myenv $script
+        sudo -u HOME=$home $username $myenv $script
       elif [[ "$1" == "system" ]]; then
         $script
       fi
@@ -80,5 +80,5 @@ function run_setup() {
 run_setup user
 run_setup system
 
-# automatic updates
+# automatic updates (every 4 hours)
 echo "0   */4   *   *   *   root   $basedir/update.sh" #> /etc/cron.d/adrtools

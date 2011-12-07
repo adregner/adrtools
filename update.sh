@@ -4,7 +4,7 @@ cd `dirname $0`
 
 status=`git pull 2>&1 | egrep -q "^Already up-to-date."`
 
-if [[ -z "$status" ]]; then
+if test $? -eq 1; then
   # the repo has been updated
   ./init.sh update
 else
